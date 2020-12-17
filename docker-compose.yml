@@ -1,0 +1,11 @@
+db:
+  image: postgres
+  restart: always
+  environment:
+    POSTGRES_USER: shadowrun_timeline
+    POSTGRES_PASSWORD: shadowrun_timeline
+    POSTGRES_DB: shadowrun_timeline_development
+  volumes:
+    - ./tmp/postgresql:/var/lib/postgresql
+  ports:
+    - 5432:5432
