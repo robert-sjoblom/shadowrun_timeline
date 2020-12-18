@@ -1,20 +1,27 @@
-  default: &default
-    adapter: postgresql
-    encoding: unicode
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %
+  port: 5432
 
-  development:
-    <<: *default
-    database: shadowrun_timeline_development
-    username: shadowrun_timeline
-    password: shadowrun_timeline
-    host: localhost
-    port: 5433
+development:
+  <<: *default
+  database: shadowrun_timeline_development
+  username: shadowrun_timeline
+  password: shadowrun_timeline
+  host: localhost
+  port: 5433
 
-  test:
-    <<: *default
-    database: shadowrun_timeline_test
-    username: shadowrun_timeline
-    password: shadowrun_timeline
-    host: localhost
-    port: 5433
+test:
+  <<: *default
+  database: shadowrun_timeline_test
+  username: shadowrun_timeline
+  password: shadowrun_timeline
+  host: localhost
+  port: 5433
+
+production:
+<<: *default
+database: sr-timeline_production
+username: sr-timeline
+password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
