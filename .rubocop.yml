@@ -2,9 +2,24 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   NewCops: disable
+  Exclude:
+   - 'config/**/*'
+   - 'node_modules/**/*'
+   - 'db/**/*'
+   - 'bin/**/*'
+   - 'Gemfile'
+   - 'Rakefile'
 
 Layout/LineLength:
   Max: 80
 
 Style/Documentation:
   Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: "double_quotes"
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'lib/tasks/auto_annotate_models.rake'
