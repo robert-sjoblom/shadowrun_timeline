@@ -93,6 +93,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    incomplete_date (0.1.2)
+      rails
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     json (2.4.1)
@@ -276,6 +278,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   factory_bot_rails
+  incomplete_date
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

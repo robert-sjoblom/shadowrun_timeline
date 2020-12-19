@@ -11,6 +11,5 @@
 #  updated_at  :datetime         not null
 #
 class Event < ApplicationRecord
-  validates :year, presence: true
   validates :description, presence: true
 end
