@@ -7,7 +7,6 @@
 #  id          :uuid             not null, primary key
 #  date        :datetime
 #  description :text
-#  year        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
