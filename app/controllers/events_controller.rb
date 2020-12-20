@@ -43,6 +43,12 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event)
-          .permit(:description, :year, :month, :day)
+          .permit(
+            :description,
+            :year,
+            :month,
+            :day,
+            source_ids: []
+          )
   end
 end

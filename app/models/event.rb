@@ -15,4 +15,9 @@
 class Event < ApplicationRecord
   validates :description, presence: true
   validates :year, presence: true
+
+  has_many :event_sources, dependent: :destroy
+  has_many :sources, through: :event_sources
+
+  accepts_nested_attributes_for :event_sources
 end

@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      source:
+        one: Source
+        other: Sources
   hello: "Hello world"

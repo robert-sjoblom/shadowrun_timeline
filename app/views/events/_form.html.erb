@@ -31,6 +31,10 @@
     <%= form.text_area :description %>
   </div>
 
+
+  <%= form.select :source_ids, Source.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
