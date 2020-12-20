@@ -3,7 +3,8 @@
 FactoryBot.define do
   factory :event do
     year { 1999 }
-    date { "2020-12-18 10:46:13" }
+    month { 2 }
+    day { 14 }
     description { "Hostile Takeover" }
   end
 end

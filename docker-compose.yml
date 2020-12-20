@@ -1,11 +1,16 @@
-db:
-  image: postgres
-  restart: always
-  environment:
-    POSTGRES_USER: shadowrun_timeline
-    POSTGRES_PASSWORD: shadowrun_timeline
-    POSTGRES_DB: shadowrun_timeline_development
-  volumes:
-    - ./tmp/postgresql:/var/lib/postgresql
-  ports:
-    - 5433:5432
+version: '3.5'
+
+services:
+  db:
+    image: postgres:alpine
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    restart: always
+    environment:
+      POSTGRES_USER: shadowrun_timeline
+      POSTGRES_PASSWORD: shadowrun_timeline
+    ports:
+      - 5433:5432
+
+volumes:
+  postgres:

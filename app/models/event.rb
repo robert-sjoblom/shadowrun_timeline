@@ -5,13 +5,14 @@
 # Table name: events
 #
 #  id          :uuid             not null, primary key
-#  date        :datetime
+#  day         :integer
 #  description :text
+#  month       :integer
 #  year        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 class Event < ApplicationRecord
-  validates :year, presence: true
   validates :description, presence: true
+  validates :year, presence: true
 end

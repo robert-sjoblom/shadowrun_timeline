@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "events/edit", type: :view do
-  before(:each) do
+  before do
     @event = create(:event)
   end
 
@@ -11,8 +11,6 @@ RSpec.describe "events/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", event_path(@event), "post" do
-      assert_select "input[name=?]", "event[year]"
-
       assert_select "textarea[name=?]", "event[description]"
     end
   end
