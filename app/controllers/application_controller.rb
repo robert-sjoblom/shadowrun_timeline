@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def default_update_respond_to(rcrd)
     respond_to do |format|
-      if rcrd.update(event_params)
+      if rcrd.update(named_params(rcrd))
         format.html { redirect_to rcrd, notice: update_notice(rcrd) }
         format.json { render :show, status: :ok, location: rcrd }
       else
@@ -33,5 +33,9 @@ class ApplicationController < ActionController::Base
 
   def update_notice(record)
     "#{record.class.name} was successfully updated."
+  end
+
+  def named_params(record)
+    send "#{record.class.name.downcase}_params"
   end
 end
