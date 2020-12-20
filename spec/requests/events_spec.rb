@@ -18,11 +18,11 @@ RSpec.describe "/events", type: :request do
   # Event. As you add validations to Event, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    { date: "2020-12-18 10:46:13", description: "Hostile Takeover" }
+    { year: 1999, month: 2, description: "Hostile Takeover" }
   end
 
   let(:invalid_attributes) do
-    { date: "2020-12-18 10:46:13", description: nil }
+    { day: 2, description: nil }
   end
 
   describe "GET /index" do

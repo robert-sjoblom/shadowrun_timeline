@@ -18,35 +18,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    respond_to do |format|
-      if @event.save
-        format.html do
-          redirect_to @event, notice: "Event was successfully created."
-        end
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json do
-          render json: @event.errors, status: :unprocessable_entity
-        end
-      end
-    end
+    default_create_respond_to(@event)
   end
 
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html do
-          redirect_to @event, notice: "Event was successfully updated."
-        end
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit }
-        format.json do
-          render json: @event.errors, status: :unprocessable_entity
-        end
-      end
-    end
+    default_update_respond_to(@event)
   end
 
   def destroy
@@ -66,6 +42,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:year, :date, :description)
+    params.require(:event)
+          .permit(:description, :year, :month, :day)
   end
 end
