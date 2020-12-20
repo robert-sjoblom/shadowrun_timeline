@@ -32,6 +32,7 @@ end
 
 group :development do
   gem "annotate"
+  gem 'guard-rspec', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "listen", "~> 3.2"
   gem "rails_best_practices"
@@ -39,7 +40,6 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-performance', require: false
-  gem "shoulda"
   gem "web-console", ">= 3.3.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
@@ -52,6 +52,7 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+  gem "shoulda"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
